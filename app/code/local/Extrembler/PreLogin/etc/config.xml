@@ -1,0 +1,101 @@
+<?xml version='1.0'?>
+<!--
+/**
+* @category Extrembler
+* @package Extrembler_PreLogin
+* @author  Extrembler <gaurangpadhiyar1993@gmail.com>
+*/
+-->
+<config>
+	<modules>
+		<Extrembler_PreLogin>
+			<version>0.1.0</version>
+		</Extrembler_PreLogin>
+	</modules>
+	<global>
+        <helpers>
+            <prelogin>
+                <class>Extrembler_PreLogin_Helper</class>
+            </prelogin>
+        </helpers>
+        <models>
+            <prelogin>
+                <class>Extrembler_PreLogin_Model</class>
+            </prelogin>
+        </models>
+        <blocks>
+            <prelogin>
+                <class>Extrembler_PreLogin_Block</class>
+            </prelogin>
+        </blocks>
+    </global>
+    <frontend>
+        <routers>
+            <prelogin>
+                <use>standard</use>
+                <args>
+                    <module>Extrembler_PreLogin</module>
+                    <frontName>prelogin</frontName>
+                </args>
+            </prelogin>
+        </routers>
+        <layout>
+            <updates>
+                <prelogin>
+                    <file>extrembler/prelogin.xml</file>
+                </prelogin>
+            </updates>
+        </layout>
+        <events>
+            <core_block_abstract_to_html_after>
+                <observers>
+                    <prelogindispatch>
+                        <class>prelogin/observer</class>
+                        <method>init</method>
+                    </prelogindispatch>
+                </observers>
+            </core_block_abstract_to_html_after>
+        </events>
+    </frontend>
+    <admin>
+        <routers>
+            <prelogin>
+                <use>admin</use>
+                <args>
+                    <module>Extrembler_PreLogin</module>
+                    <frontName>prelogin</frontName>
+                </args>
+            </prelogin>
+        </routers>
+    </admin>
+    <adminhtml>
+        <events>
+            <admin_system_config_changed_section_prelogin>
+                <observers>
+                    <preloginsave>
+                        <class>prelogin/adminhtml_system_config_backend_admin_observer</class>
+                        <method>saveConfig</method>
+                    </preloginsave>
+                </observers>
+            </admin_system_config_changed_section_prelogin>
+        </events>
+    </adminhtml>
+    <default>
+        <extrembler>
+            <prelogin>
+                <prelogin_general>
+                    <is_enable>0</is_enable>
+                    <page_title>Login to Access Website</page_title>
+                    <label>Login to Access Website</label>
+                    <noticeenable>1</noticeenable>
+                    <noticeposition>left</noticeposition>
+                    <notice>
+                        <ul><li>This is not Customer login. This is pre Login before accessing website.</li><li>mail at : <a href="mailto:someone@example.com?Subject=Need%20Access%20of%20Website" target="_top">Send Mail</a> to Access the Website</li>
+                        <li>For More Details you may contact website owner by email :someoneofadmin@example.com</li></ul>
+                    </notice>
+                    <stylecss>.block-login .block-title,.prelogin-button{ border: none !important; }</stylecss>
+                </prelogin_general>
+            </prelogin>
+        </extrembler>
+    </default>
+</config>

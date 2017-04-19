@@ -1,0 +1,17 @@
+/**
+* @category Extrembler
+* @package Extrembler_PreLogin
+* @author  Extrembler <gaurangpadhiyar1993@gmail.com>
+*/
+div.clear{
+    clear: both;
+}
+.block-login{
+  width: 100%;
+}
+.prelogin-notice,.prelogin-form{
+  width: 50%;
+}
+.prelogin-button{
+  float: left;
+}

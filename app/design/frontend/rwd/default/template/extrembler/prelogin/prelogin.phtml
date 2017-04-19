@@ -1,0 +1,62 @@
+<?php
+/**
+* @category Extrembler
+* @package Extrembler_PreLogin
+* @author  Extrembler <gaurangpadhiyar1993@gmail.com>
+*/
+?>
+<?php $label        = $this->loginLabel(); ?>
+<?php $notice       = $this->loginNotice(); ?>
+<?php $noticePos    = $this->loginNoticePosition(); ?>
+<?php $path         = $this->bgImage(); ?>
+<?php $style        = $this->extraStyleCss(); ?>
+<?php $formStyle    = 'none'; ?>
+
+<div class="block block-login">
+    <div class="block-title">
+        <strong><span><?php echo $this->__($label) ?></span></strong>
+    </div>
+    <?php if($notice != ''): ?>
+        <div class="notice prelogin-notice" style="float:<?php echo $noticePos; ?>;">
+            <?php echo $this->__($notice); ?>
+            <?php $formStyle = 'right'; ?>
+        </div>
+    <?php endif; ?>
+    <div class="prelogin-form" style="float:<?php echo $formStyle; ?>;">
+        <form action="<?php echo $this->getLoginUrl() ?>" method="post" id="prelogin-form">
+            <div class="content fieldset">
+                <ul class="form-list">
+                    <li><?php echo $this->getBlockHtml('formkey') ?></li>
+                    <li>
+                        <label for="mini-login" class="required"><em>*</em><?php echo $this->__('User Name:') ?></label>
+                        <div class="input-box">
+                            <input type="text" autocapitalize="off" autocorrect="off" spellcheck="false" name="prelogin[username]" id="mini-login" class="input-text required-entry" />
+                        </div>
+                    </li>
+                    <li>
+                        <label for="mini-password" class="required"><em>*</em><?php echo $this->__('Password:') ?></label>
+                        <div class="input-box">
+                            <input type="password" name="prelogin[password]" id="mini-password" class="input-text required-entry" />
+                        </div>
+                    </li>
+                    <li>
+                        <div class="buttons-set prelogin-button">
+                            <button type="submit" class="button"><span><span><?php echo $this->__('Login') ?></span></span></button>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </form>
+    </div>
+    <script type="text/javascript">
+        //<![CDATA[
+           var preLoginForm = new VarienForm('prelogin-form', true);
+        //]]>
+    </script>
+</div>
+<?php if($path != ''): ?>
+    <style type="text/css">
+        .prelogin-index-index .wrapper{ background-image: url('<?php echo $path; ?>'); }
+        <?php print_r($style); ?>
+    </style>
+<?php endif; ?>

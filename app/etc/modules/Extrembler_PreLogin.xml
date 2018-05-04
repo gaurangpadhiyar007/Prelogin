@@ -4,6 +4,9 @@
         <Extrembler_PreLogin>
             <active>true</active>
             <codePool>local</codePool>
+            <depends>
+	            <Extrembler_Base />
+	        </depends>
         </Extrembler_PreLogin>
     </modules>
 </config>

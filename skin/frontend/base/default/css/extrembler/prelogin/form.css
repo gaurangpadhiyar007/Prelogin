@@ -15,3 +15,12 @@ div.clear{
 .prelogin-button{
   float: left;
 }
+.prelogin-index-index .form-language{
+	padding: 10px;
+	text-align: center;
+}
+.prelogin-index-index .wrapper{
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}

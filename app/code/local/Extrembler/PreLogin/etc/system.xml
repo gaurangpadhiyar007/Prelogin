@@ -7,14 +7,8 @@
 */
 -->
 <config>
-    <tabs>
-        <extrembler translate="label">
-            <label>Extrembler</label>
-            <sort_order>100</sort_order>
-        </extrembler>
-    </tabs>
     <sections>
-    	<prelogin>
+        <prelogin>
             <label>Pre Login Configuration</label>
             <tab>extrembler</tab>
             <frontend_type>text</frontend_type>
@@ -23,13 +17,20 @@
             <show_in_website>1</show_in_website>
             <show_in_store>1</show_in_store>
             <groups>
+                <about>
+                    <frontend_model>extremblerbase/adminhtml_about</frontend_model>
+                    <sort_order>1</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                </about>
                 <prelogin_enable translate="label">
-                	<label>Pre login enable</label>
+                    <label>Pre login enable</label>
                     <frontend_type>text</frontend_type>
                     <sort_order>100</sort_order>
                     <show_in_default>1</show_in_default>
-                    <show_in_website>0</show_in_website>
-                    <show_in_store>0</show_in_store>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
                     <fields>
                         <is_enable translate="label">
                             <label>Enable Pre Login</label>
@@ -40,33 +41,34 @@
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>
                         </is_enable>
-                	</fields>
+                    </fields>
                 </prelogin_enable>
                 <prelogin_login translate="label">
-                	<label>Pre login creditails</label>
+                    <label>Pre login creditails</label>
                     <frontend_type>text</frontend_type>
                     <sort_order>110</sort_order>
                     <show_in_default>1</show_in_default>
-                    <show_in_website>0</show_in_website>
-                    <show_in_store>0</show_in_store>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
                     <fields>
                         <user translate="label">
                             <label>User name : </label>
                             <frontend_type>text</frontend_type>
                             <sort_order>1</sort_order>
                             <show_in_default>1</show_in_default>
-                            <show_in_website>0</show_in_website>
-                            <show_in_store>0</show_in_store>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
                         </user>
                         <password translate="label">
                             <label>Password :</label>
                             <frontend_type>password</frontend_type>
+                            <backend_model>adminhtml/system_config_backend_encrypted</backend_model>
                             <sort_order>2</sort_order>
                             <show_in_default>1</show_in_default>
-                            <show_in_website>0</show_in_website>
-                            <show_in_store>0</show_in_store>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
                         </password>
-                	</fields>
+                    </fields>
                 </prelogin_login>
                 <prelogin_general translate="label">
                     <label>Pre login form</label>
@@ -81,16 +83,16 @@
                             <frontend_type>text</frontend_type>
                             <sort_order>1</sort_order>
                             <show_in_default>1</show_in_default>
-                            <show_in_website>0</show_in_website>
-                            <show_in_store>0</show_in_store>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
                         </page_title>
                         <label translate="label">
                             <label>Login Label : </label>
                             <frontend_type>text</frontend_type>
                             <sort_order>2</sort_order>
                             <show_in_default>1</show_in_default>
-                            <show_in_website>0</show_in_website>
-                            <show_in_store>0</show_in_store>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
                         </label>
                         <noticeenable translate="label">
                             <label>Enable Notice</label>
@@ -98,8 +100,8 @@
                             <source_model>adminhtml/system_config_source_yesno</source_model>
                             <sort_order>3</sort_order>
                             <show_in_default>1</show_in_default>
-                            <show_in_website>0</show_in_website>
-                            <show_in_store>0</show_in_store>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
                         </noticeenable>
                         <noticeposition translate="label">
                             <label>Login Notice Position: </label>
@@ -107,16 +109,16 @@
                             <source_model>prelogin/adminhtml_system_config_source_position</source_model>
                             <sort_order>4</sort_order>
                             <show_in_default>1</show_in_default>
-                            <show_in_website>0</show_in_website>
-                            <show_in_store>0</show_in_store>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
                         </noticeposition>
                         <notice translate="label">
                             <label>Login Notice : </label>
                             <frontend_type>textarea</frontend_type>
                             <sort_order>5</sort_order>
                             <show_in_default>1</show_in_default>
-                            <show_in_website>0</show_in_website>
-                            <show_in_store>0</show_in_store>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
                             <comment>Html Tags are allowed, allowed html tag list find at ReadMe.txt</comment>
                         </notice>
                         <backlogo translate="label comment">
@@ -128,16 +130,16 @@
                             <base_url type="media" scope_info="1">theme</base_url>
                             <sort_order>6</sort_order>
                             <show_in_default>1</show_in_default>
-                            <show_in_website>0</show_in_website>
-                            <show_in_store>0</show_in_store>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
                         </backlogo>
                         <stylecss>
                             <label>Extra css to style pre login form : </label>
                             <frontend_type>textarea</frontend_type>
                             <sort_order>7</sort_order>
                             <show_in_default>1</show_in_default>
-                            <show_in_website>0</show_in_website>
-                            <show_in_store>0</show_in_store>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
                             <comment>Add extra css as per your needs</comment>                   
                         </stylecss>
                     </fields>
@@ -156,8 +158,8 @@
                             <source_model>prelogin/adminhtml_system_config_source_redirect</source_model>
                             <sort_order>1</sort_order>
                             <show_in_default>1</show_in_default>
-                            <show_in_website>0</show_in_website>
-                            <show_in_store>0</show_in_store>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
                             <comment>After successful login redirect</comment>
                         </prelogin_redirect_url>
                     </fields>

@@ -26,6 +26,7 @@ class Extrembler_PreLogin_Block_Login extends Mage_Core_Block_Template
         $this->getLayout()->getBlock('root')->setTemplate('page/1column.phtml');
 		$this->getLayout()->getBlock('head')->addCss('css/extrembler/prelogin/form.css');
 		$this->getLayout()->getBlock('root')->unsetChild('header');
+		$this->getLayout()->getBlock('content')->insert('store_language');
 		$this->getLayout()->getBlock('root')->unsetChild('footer');
 	    return parent::_prepareLayout();
 	}

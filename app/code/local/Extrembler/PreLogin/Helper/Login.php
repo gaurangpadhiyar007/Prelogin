@@ -41,11 +41,12 @@ class Extrembler_PreLogin_Helper_Login extends Extrembler_PreLogin_Helper_Abstra
 		$validate = $this->isEmptyCheck($post);
 		if($validate == false){
 			$postUser = md5($post['username']);
-	        $postPwd = md5($post['password']);
+	        $postPwd = Mage::helper('core')->encrypt($post['password']);
+
 	        $loginC = $this->loginC();
 	        
 	        $user = md5($loginC['user']);
-	        $password = md5($loginC['password']);
+	        $password = $loginC['password'];
 	        
 	        if($user == $postUser && $password == $postPwd){
 	        	$sessionActivate = $this->createSession();

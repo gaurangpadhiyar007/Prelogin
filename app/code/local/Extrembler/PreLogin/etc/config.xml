@@ -7,12 +7,12 @@
 */
 -->
 <config>
-	<modules>
-		<Extrembler_PreLogin>
-			<version>0.1.0</version>
-		</Extrembler_PreLogin>
-	</modules>
-	<global>
+    <modules>
+        <Extrembler_PreLogin>
+            <version>0.1.1</version>
+        </Extrembler_PreLogin>
+    </modules>
+    <global>
         <helpers>
             <prelogin>
                 <class>Extrembler_PreLogin_Helper</class>
@@ -68,18 +68,6 @@
             </prelogin>
         </routers>
     </admin>
-    <adminhtml>
-        <events>
-            <admin_system_config_changed_section_prelogin>
-                <observers>
-                    <preloginsave>
-                        <class>prelogin/adminhtml_system_config_backend_admin_observer</class>
-                        <method>saveConfig</method>
-                    </preloginsave>
-                </observers>
-            </admin_system_config_changed_section_prelogin>
-        </events>
-    </adminhtml>
     <default>
         <extrembler>
             <prelogin>
@@ -90,7 +78,7 @@
                     <noticeenable>1</noticeenable>
                     <noticeposition>left</noticeposition>
                     <notice>
-                        <ul><li>This is not Customer login. This is pre Login before accessing website.</li><li>mail at : <a href="mailto:someone@example.com?Subject=Need%20Access%20of%20Website" target="_top">Send Mail</a> to Access the Website</li>
+                        <ul><li>This is not Customer login. This is pre Login before accessing website.</li><li>mail at : <a href="mailto:someone@example.com?subject=Need%20Access%20of%20Website" target="_top">Send Mail</a> to Access the Website</li>
                         <li>For More Details you may contact website owner by email :someoneofadmin@example.com</li></ul>
                     </notice>
                     <stylecss>.block-login .block-title,.prelogin-button{ border: none !important; }</stylecss>
